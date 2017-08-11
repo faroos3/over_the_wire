@@ -285,3 +285,22 @@ Great. That is the password to get into bandit7@bandit.labs.overthewire.org -p 2
 That took way longer than I thought it would. I learned about grep and the 2>/dev/null thing. 
 
 Level 7 -> Level 8: 
+
+Okay so there is a file named data.txt, cat'd it, and there's a bunch of words with flags next to them. Hint is that the flag is sotred next to the word millionth. Should just be a simple: 
+    grep millionth data.txt 
+I hope. Yep. Yields: cvX2JJa4CFALtqS87jk27qwqGhBM9plV to ssh bandit8@bandit.labs.overthewire.org -p 2220
+
+They suggesting using uniq, base64, tr, tar, gzip, bzip2, and xxd though. So ima have to read them and figure out what they do. 
+
+Level 8 -> Level 9: 
+Hint is it's the only line of text that occurs only once...so a unique line in the file? Alos says helpful reading materials are pipes and redirects. Gonna have to read those too. 
+
+lol cat'ing it yields a ton of flags. Apparently this will sort stuff based on number of appearences, with piping, thanks stack overflow, got to this page when searching "uniq linux command". 
+    sort FILE | uniq -c | sort -n
+Look at the reading here: http://www.westwind.com/reference/os-x/commandline/pipes.html
+running the Stackoverflow command yields: wow. Apparently the flag appears once and everyhing else appears ten times. 
+Flag for ssh bandit9@bandit.labs.overthewire.org -p 2220 is UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+Got to do these readings! 
+
+Level 9 -> Level 10: 
+
